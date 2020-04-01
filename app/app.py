@@ -6,7 +6,7 @@ app = Flask(__name__, template_folder='../app/data')
 config = {}
 
 #open configuration file
-with open('app/data/config.json') as json_file:
+with open('../app/data/config.json') as json_file:
     config = json.load(json_file)
 
 #primary route

@@ -3,5 +3,10 @@ services:
   home_codes:
     container_name: home_codes
     build: .
+    volumes: 
+      - type: bind 
+        source: ./app/data
+        target: /app/data
+
     ports:
       - "1987:8080"

@@ -2,13 +2,14 @@ import os, json
 from flask import Flask, render_template, request
 
 #FLASK
-app = Flask(__name__, template_folder='../app')
+app = Flask(__name__, template_folder='../app/data')
 config = {}
 
 #open configuration file
-with open('app/config.json') as json_file:
+with open('app/data/config.json') as json_file:
     config = json.load(json_file)
 
+#primary route
 @app.route("/q", methods=['GET'])
 def query():
     """ This function serves a webpage with appliance config information"""

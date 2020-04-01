@@ -8,7 +8,6 @@ app = Flask(
     template_folder='/app/data', 
 )
 
-
 #========== DEFINE CLASS OF TYPES 
 class ConfigurationType(Enum):
     APPLIANCE = 1
@@ -32,7 +31,7 @@ def query():
     config_id = str(request.args.get('id'))
 
     #only supporting one request time right now
-    if (config_type == ConfigurationType.APPLIANCE):
+    if (int(config_type) == ConfigurationType.APPLIANCE):
 
         #--- LOAD DEVICE CONFIG
         requested_data = config[config_id]

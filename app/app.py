@@ -12,19 +12,19 @@ app = Flask(
 class ConfigurationType(IntEnum):
     APPLIANCE = 1
 
-#========== LOAD CONFIGURATION FILE
-config = {}
-try: 
-    with open('../app/data/config.json') as json_file:
-        config = json.load(json_file)
-        print ("Loaded: " + str(len(config)) + " appliance configuration(s) from config.json.") 
-except:
-    print ("Error: Cannot load config.json.")
-
 #========== DEFINE SIMPLE PRIMARY ROUTE
 @app.route("/q", methods=['GET'])
 def query():
     """ This function serves a webpage with appliance config information"""
+
+    #--- LOAD CONFIG 
+    config = {}
+    try: 
+        with open('../app/data/config.json') as json_file:
+            config = json.load(json_file)
+            print ("Loaded: " + str(len(config)) + " appliance configuration(s) from config.json.") 
+    except:
+        print ("Error: Cannot load config.json.")
 
     #--- GET VALUES 
     config_type = str(request.args.get('t'))

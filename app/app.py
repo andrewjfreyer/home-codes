@@ -13,7 +13,7 @@ with open('app/config.json') as json_file:
 def query():
     """ This function serves a webpage with appliance config information"""
 
-    q_type = str(request.args.get('type'))
+    q_type = str(request.args.get('t'))
     name = str(request.args.get('name'))
 
     #only supporting one request time right now

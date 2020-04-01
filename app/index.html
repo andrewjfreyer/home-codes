@@ -2,10 +2,47 @@
 <html>
 <body>
 
-<h1>Appliance Information</h1>
-{{data.name}}
-{{data.model}}
-{{data.consumables}}
+<h1>Information</h1>
+<table>
+	<tr>
+		<td>Appliance Name</td>
+		<td>{{data.name}}</td>
+	</tr>
+	<tr>
+		<td>Manufacturer</td>
+		<td>{{data.manufacturer}}</td>
+	</tr>
+	<tr>
+		<td>Model Number</td>
+		<td>{{data.model}}</td>
+	</tr>
+</table>
+
+<h1>Consumable(s)</h1>
+
+<table>
+{% for item in data.consumables %}
+    <tr>
+    	<td>{{ item.name }}</td>
+    	<td>
+    		<a href="{{ item.url }}">{{ item.resource }}</a>
+    	</td>
+    </tr>
+{% endfor %}
+</table>
+
+<h1>Documents(s)</h1>
+
+<table>
+{% for item in data.documents %}
+    <tr>
+    	<td>{{ item.name }}</td>
+    	<td>
+    		<a href="{{ item.url }}">{{ item.resource }}</a>
+    	</td>
+    </tr>
+{% endfor %}
+</table>
 
 </body>
 </html>

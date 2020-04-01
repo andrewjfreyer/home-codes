@@ -3,18 +3,29 @@
 		"name" : "Jura Espresso Machine",
 		"model" : "1234",
 		"manufacturer" : "test",
-		"consumables" : {
-			"supply_1" : "http://www.example.com",
-			"supply_2" : "http://www.example.com"
-		}
-	},
-	"oven" : {
-		"name" : "KitchenAid Oven",
-		"model" : "2345",
-		"manufacturer" : "acme",
-		"consumables" : {
-			"supply_1" : "http://www.example.com",
-			"supply_2" : "http://www.example.com"
-		}
+		"documents" : [
+			{
+				"name" : "Warranty",
+				"URL" : "http://www.google.com",
+				"resource" : "PDF"
+			},
+			{
+				"name" : "Manual",
+				"URL" : "http://www.google.com",
+				"resource" : "PDF"
+			},
+		],
+		"consumables" : [
+			{
+				"name" : "Cleaning Solution",
+				"URL" : "http://www.amazon.com",
+				"resource" : "Amazon"
+			},
+			{
+				"name" : "Filter",
+				"URL" : "http://www.amazon.com",
+				"resource" : "FiltersUnlimited"
+			}
+		]
 	}
 }

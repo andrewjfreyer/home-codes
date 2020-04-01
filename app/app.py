@@ -19,13 +19,18 @@ def query():
     #only supporting one request time right now
     if (q_type.lower() == "appliance"):
 
-        #get this devices config
-        requested_data = config[name]
+        try:
 
-        #render template
-        return render_template(
-            'app/index.html',
-            data = requested_data)
+            #get this devices config
+            requested_data = config[name]
+
+            #render template
+            return render_template(
+                'index.html',
+                data = requested_data)
+            
+        except: 
+            pass
 
     return "Unknown error"
 

@@ -30,6 +30,13 @@ def query():
     config_type = str(request.args.get('t'))
     config_id = str(request.args.get('id'))
 
+ 
+    print (config_type)
+    print (config_id)
+
+    print ("WORKING????!!")
+
+
     #only supporting one request time right now
     if (int(config_type) == ConfigurationType.APPLIANCE):
 
@@ -40,11 +47,7 @@ def query():
         return render_template(
             'index.html',
             data = requested_data)
- 
-    print (config_type)
-    print (config_id)
 
-    print ("WORKING????!!")
 
     #INTENTIONALLY EMPTY RESPONSE
     return ('', 204)

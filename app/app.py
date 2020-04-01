@@ -30,9 +30,7 @@ def query():
     config_type = str(request.args.get('t'))
     config_id = str(request.args.get('id'))
 
- 
-    print (config_type, file=sys.stderr)
-    print (config_id, file=sys.stderr)
+    return { "type" : config_type, "id" : config_id}
 
     #only supporting one request time right now
     if (int(config_type) == ConfigurationType.APPLIANCE):

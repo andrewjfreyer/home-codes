@@ -1,8 +1,9 @@
 {
 	"espresso" : {
 		"name" : "Jura Espresso Machine",
-		"model" : "1234",
-		"manufacturer" : "test",
+		"model" : "Eno Micro 90",
+		"serial" : "123456789876543",
+		"manufacturer" : "Jura",
 		"documents" : [
 			{
 				"name" : "Warranty",

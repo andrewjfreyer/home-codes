@@ -4,10 +4,10 @@ from flask import Flask,render_template
 #FLASK
 app = Flask(__name__)
 
-@app.route("/q?type=appliance&name=<appliance_name>", methods=['GET'])
+@app.route("/q", methods=['GET'])
 def query():
     """ This function serves a webpage with appliance config information"""
-    return appliance_name
+    return "success"
 
 #MAIN
 if __name__ == "__main__":

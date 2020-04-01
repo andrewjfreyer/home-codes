@@ -1,0 +1,7 @@
+version: '2.4'
+services:
+  home_codes:
+    container_name: home_codes
+    build: .
+    ports:
+      - "1987:8080"

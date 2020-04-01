@@ -6,7 +6,7 @@ services:
     volumes: 
       - type: bind 
         source: ./data
-        target: /app/data
+        target: /app/app/data
 
     ports:
       - "1987:8080"

@@ -2,14 +2,16 @@ import os, json
 from flask import Flask, render_template, request
 
 #FLASK
-app = Flask(__name__, template_folder='../app/data')
+app = Flask(__name__, template_folder='/app/data')
 config = {}
 
+#LOAD CONFIGURATION FILE
 try: 
-#open configuration file
+    #open configuration file
     with open('../app/data/config.json') as json_file:
         config = json.load(json_file)
         print ("Loaded: " + str(config.length()) + " appliance configuration(s).") 
+
 except:
     print ("Error: Cannot load configuration file.")
 

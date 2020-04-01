@@ -6,7 +6,7 @@ app = Flask(__name__)
 config = {}
 
 #open configuration file
-with open('config.json') as json_file:
+with open('app/config.json') as json_file:
     config = json.load(json_file)
 
 @app.route("/q", methods=['GET'])
@@ -24,7 +24,7 @@ def query():
 
         #render template
         return render_template(
-            'index.html',
+            'app/index.html',
             data = requested_data)
 
     return "Unknown error"

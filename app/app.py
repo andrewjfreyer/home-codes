@@ -17,7 +17,7 @@ config = {}
 try: 
     with open('../app/data/config.json') as json_file:
         config = json.load(json_file)
-        print ("Loaded: %s appliance configuration(s).", str(len(config))) 
+        print ("Loaded: " + str(len(config)) + " appliance configuration(s) from config.json.") 
 except:
     print ("Error: Cannot load config.json.")
 
@@ -41,6 +41,9 @@ def query():
             'index.html',
             data = requested_data)
  
+    print (config_type)
+    print (config_id)
+
     #INTENTIONALLY EMPTY RESPONSE
     return ('', 204)
 

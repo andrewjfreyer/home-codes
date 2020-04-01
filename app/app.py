@@ -1,5 +1,5 @@
 import os, json
-from enum import Enum
+from enum import IntEnum
 from flask import Flask, render_template, request
 
 #========== FLASK 
@@ -9,7 +9,7 @@ app = Flask(
 )
 
 #========== DEFINE CLASS OF TYPES 
-class ConfigurationType(Enum):
+class ConfigurationType(IntEnum):
     APPLIANCE = 1
 
 #========== LOAD CONFIGURATION FILE

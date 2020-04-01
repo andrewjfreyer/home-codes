@@ -1,66 +1,91 @@
 <html>
-<body>
-<h1>Use Instructions</h1>
+<head>
+<style>
+.monospace {
+  font-family: "Lucida Console", Courier, monospace;
+}
+h1 { 
+	color: hsl(204, 89%, 59%);
+	text-align: center;
+	text-decoration: underline;
+}
+h2 { color: hsl(204, 89%, 59%);}
+th {	
+	font-weight: bold; 
+	width: 25%;
+	text-align: left;
+}
+tr{
+	height: 40px;
+}
+table{
+	width:100%;
+	table-layout:fixed;
+}
 
-<table>
-	<tr>
-		<td>Instructions</td>
-		<td>{{data.instructions}}</td>
-	</tr>
-	<tr>
-		<td>Notes</td>
-		<td>{{data.notes}}</td>
-	</tr>
-</table>
+</style>
+</head>
+	<body class="monospace">
+		<h1>{{data.name}}</h1>
+		<h2>Use Instructions</h2>
+		<table>
+			<tr>
+				<th>Instructions</th>
+				<td>{{data.instructions}}</td>
+			</tr>
+			<tr>
+				<th>Notes</th>
+				<td>{{data.notes}}</td>
+			</tr>
+		</table>
 
-<h1>Information</h1>
+		<h2>Information</h2>
 
-<table>
-	<tr>
-		<td>Name</td>
-		<td>{{data.name}}</td>
-	</tr>
-	<tr>
-		<td>Manufacturer</td>
-		<td>{{data.manufacturer}}</td>
-	</tr>
-	<tr>
-		<td>Model Number</td>
-		<td>{{data.model}}</td>
-	</tr>
-	<tr>
-		<td>Serial Number</td>
-		<td>{{data.serial}}</td>
-	</tr>
-</table>
+		<table>
+			<tr>
+				<th>Name</th>
+				<td>{{data.name}}</td>
+			</tr>
+			<tr>
+				<th>Manufacturer</th>
+				<td>{{data.manufacturer}}</td>
+			</tr>
+			<tr>
+				<th>Model Number</th>
+				<td>{{data.model}}</td>
+			</tr>
+			<tr>
+				<th>Serial Number</th>
+				<td>{{data.serial}}</td>
+			</tr>
+		</table>
 
-<h1>Consumable(s)</h1>
+		<h2>Consumable(s)</h2>
 
-<table>
-{% for item in data.consumables %}
-    <tr>
-    	<td>
-    		<a href="{{ item.URL }}" title="{{ item.resource }}">{{ item.name }}</a>
-    	</td>
-    	<td>
-    		{{ item.description }}
-    	</td>
-    </tr>
-{% endfor %}
-</table>
+		<table>
+		{% for item in data.consumables %}
+		    <tr>
+		    	<th>
+		    		<a href="{{ item.URL }}" title="{{ item.resource }}">{{ item.name }}</a>
+		    	</th>
+		    	<td>
+		    		{{ item.description }}
+		    	</td>
+		    </tr>
+		{% endfor %}
+		</table>
 
-<h1>Documents(s)</h1>
+		<h2>Documents(s)</h2>
 
-<table>
-{% for item in data.documents %}
-    <tr>
-    	<td>{{ item.name }}</td>
-    	<td>
-    		<a href="{{ item.URL }}">{{ item.resource }}</a>
-    	</td>
-    </tr>
-{% endfor %}
-</table>
-
-</body>
+		<table>
+		{% for item in data.documents %}
+		    <tr>
+		    	<th>{{ item.name }}</th>
+		    	<td>
+		    		<a href="{{ item.URL }}">{{ item.resource }}</a>
+		    	</td>
+		    </tr>
+		{% endfor %}
+		</table>
+	</body>
 </html>

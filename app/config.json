@@ -1,0 +1,19 @@
+{
+	"espresso" : {
+		"name" : "Kitchen Espresso Machine",
+		"model" : "1234",
+		"manufacturer" : "test",
+		"consumables" : {
+			"supply_1" : "http://www.example.com",
+			"supply_2" : "http://www.example.com",
+		}
+	},
+	"oven" : {
+		"model" : "2345",
+		"manufacturer" : "acme",
+		"consumables" : {
+			"supply_1" : "http://www.example.com",
+			"supply_2" : "http://www.example.com",
+		}
+	},
+}

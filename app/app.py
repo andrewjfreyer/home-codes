@@ -1,8 +1,13 @@
-import os 
+import os, json
 from flask import Flask, render_template, request
 
 #FLASK
 app = Flask(__name__)
+config = {}
+
+#open configuration file
+with open('config.json') as json_file:
+    config = json.load(json_file)
 
 @app.route("/q", methods=['GET'])
 def query():
@@ -14,9 +19,13 @@ def query():
     #only supporting one request time right now
     if (q_type.lower() == "appliance"):
 
+        #get this devices config
+        requested_data = config[name]
+
         #render template
-        return render_template('index.html',
-            name = name)
+        return render_template(
+            'index.html',
+            data = requested_data)
 
     return "Unknown error"
 

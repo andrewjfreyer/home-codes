@@ -30,8 +30,6 @@ def query():
     config_type = str(request.args.get('t'))
     config_id = str(request.args.get('id'))
 
-    return ConfigurationType.APPLIANCE
-
     #only supporting one request time right now
     if (int(config_type) == ConfigurationType.APPLIANCE):
 

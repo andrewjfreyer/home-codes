@@ -5,9 +5,14 @@ from flask import Flask, render_template, request
 app = Flask(__name__, template_folder='../app/data')
 config = {}
 
+try: 
 #open configuration file
-with open('../app/data/config.json') as json_file:
-    config = json.load(json_file)
+    with open('../app/data/config.json') as json_file:
+        config = json.load(json_file)
+        print ("Loaded: " + str(config.length()) + " appliance configuration(s).") 
+except:
+    print ("Error: Cannot load configuration file.")
+
 
 #primary route
 @app.route("/q", methods=['GET'])

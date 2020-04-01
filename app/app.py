@@ -44,6 +44,8 @@ def query():
     print (config_type)
     print (config_id)
 
+    print ("WORKING????!!")
+
     #INTENTIONALLY EMPTY RESPONSE
     return ('', 204)
 

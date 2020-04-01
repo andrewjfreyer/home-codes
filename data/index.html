@@ -40,10 +40,10 @@
 {% for item in data.consumables %}
     <tr>
     	<td>
-    		<a href="{{ item.URL }}">{{ item.name }} - {{item.resource}}</a>
+    		<a href="{{ item.URL }}">{{ item.name }} - {{ item.resource }}</a>
     	</td>
     	<td>
-    		{{item.description}}
+    		{{ item.description }}
     	</td>
     </tr>
 {% endfor %}

@@ -41,7 +41,8 @@ JSON is used to store configuration information. Edit docker-compose with a bind
 				"name" : "Product/Consumable product name",
 				"URL" : "www.purchaseurl.com",
 				"resource" : "Vendor/manufacturer",
-				"description" : "Description of how used/why."
+				"description" : "Description of how used/why.",
+				"image" : "file.png"
 			}
 		]
 	}

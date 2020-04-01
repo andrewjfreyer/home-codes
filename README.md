@@ -1,8 +1,23 @@
-### QR Code or NFC Tag as Trigger to Launch Self-Hosted Page with Home Appliance / Parts Information
+### QR Code or NFC Tag as Trigger to Launch Self-Hosted Page with Home Appliance / Part Information
+
+URL Format:
+```
+https://your-domain.tld/q?t=1&id={{identifier_for_an_appliance}}
+```
+
+Examples of `identifier_for_an_appliance` include: 
+
+* espresso 
+* oven
+* range
+* microwave
+...
+
+JSON is used to store configuration information. Edit docker-compose with a bind pointing to your `config.json` file, which follows the format: 
 
 ```
 {
-	"espresso" : {
+	"identifier_for_an_appliance" : {
 		"instructions" : "Lorem ipsum",
 		"notes" : "lorem ipsum",
 		"name" : "appliance name",
@@ -23,14 +38,10 @@
 		],
 		"consumables" : [
 			{
-				"name" : "Cleaning Solution",
-				"URL" : "http://www.amazon.com",
-				"resource" : "Amazon"
-			},
-			{
-				"name" : "Filter",
-				"URL" : "http://www.amazon.com",
-				"resource" : "FiltersUnlimited"
+				"name" : "Product/Consumable product name",
+				"URL" : "www.purchaseurl.com",
+				"resource" : "Vendor/manufacturer",
+				"description" : "Description of how used/why."
 			}
 		]
 	}

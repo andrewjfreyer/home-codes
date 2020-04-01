@@ -1,6 +1,6 @@
 <html>
 <body>
-<h1>Information & Use</h1>
+<h1>Use Instructions</h1>
 
 <table>
 	<tr>
@@ -9,8 +9,13 @@
 	</tr>
 	<tr>
 		<td>Notes</td>
-		<td>{{data.instructions}}</td>
+		<td>{{data.notes}}</td>
 	</tr>
+</table>
+
+<h1>Information</h1>
+
+<table>
 	<tr>
 		<td>Name</td>
 		<td>{{data.name}}</td>
@@ -34,9 +39,11 @@
 <table>
 {% for item in data.consumables %}
     <tr>
-    	<td>{{ item.name }}</td>
     	<td>
-    		<a href="{{ item.URL }}">{{ item.resource }}</a>
+    		<a href="{{ item.URL }}">{{ item.name }} - {{item.resource}}</a>
+    	</td>
+    	<td>
+    		{{item.description}}
     	</td>
     </tr>
 {% endfor %}

@@ -5,7 +5,7 @@ services:
     build: .
     volumes: 
       - type: bind 
-        source: ./app/data
+        source: ./data
         target: /app/data
 
     ports:

@@ -2,6 +2,10 @@ import os, json
 from enum import IntEnum
 from flask import Flask, render_template, request
 
+#========== VERSION 
+version='0.1'
+
+
 #========== FLASK 
 app = Flask(
     __name__, 
@@ -19,13 +23,13 @@ def query():
 
     #--- LOAD CONFIG 
     config = {}
+    
     try: 
         with open('../app/data/config.json') as json_file:
             config = json.load(json_file)
             print ("Loaded: " + str(len(config)) + " appliance configuration(s) from config.json.") 
-    
     except:
-        print ("Error: Cannot load config.json.")
+        return ('Error: Configuration file not found.')
 
     #--- GET VALUES 
     config_type = str(request.args.get('t'))
@@ -35,18 +39,20 @@ def query():
     if (int(config_type) == ConfigurationType.APPLIANCE):
 
         #--- LOAD DEVICE CONFIG
-        requested_data = config[config_id]
+        try:
+            requested_data = config[config_id]
 
-        #--- RENDER TEMPLATE
-        return render_template(
-            'index.html',
-            data = requested_data)
+            #--- RENDER TEMPLATE
+            return render_template(
+                'index.html',
+                data = requested_data)
+        except:
+            return ('Error: Configuration file cannot be read. Key ['+ config_id +'] not found in configuration.')
 
-
-    #INTENTIONALLY EMPTY RESPONSE
+    #--- EMPTY RESPONSE
     return ('', 204)
 
-#MAIN
+#========== MAIN
 if __name__ == "__main__":
 
     #start the app

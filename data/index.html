@@ -70,21 +70,23 @@ table{
 	<body class="monospace">
 		<h1>{{data.name}}</h1>
 		<br>
-		{% if data.instructions is not none %}
 		<h2>Use Instructions</h2>
 		<table>
+			{% if (data.instructions is not none() and (data.instructions | length > 1) %}
 			<tr>
 				<th>Instructions</th>
 				<td>{{data.instructions}}</td>
 			</tr>
+			{% endif %}
+			{% if (data.notes is not none() and (data.instructions | length > 1) %}
 			<tr>
 				<th>Notes</th>
 				<td>{{data.notes}}</td>
 			</tr>
+			{% endif %}
 		</table>
-		{% endif %}
 
-		{% if data.name is not none %}
+		{% if (data.name is not none() and (data.name | length > 1) %}
 		<h2>Information</h2>
 		<table>
 			<tr>
@@ -106,7 +108,7 @@ table{
 		</table>
 		{% endif %}
 
-		{% if data.consumables is not none %}
+		{% if (data.consumables is not none() and (data.consumables | length > 1) %}
 		<h2>Consumable(s)</h2>
 
 		<table>
@@ -123,12 +125,12 @@ table{
 		</table>
 		{%endif%}
 
-		{% if data.documents is not none %}
+		{% if (data.links is not none() and (data.links | length > 1) %}
 		<h2>Links(s)</h2>
 
 		<table>
 		    <tr>
-				{% for item in data.documents %}
+				{% for item in data.links %}
 		    	<td>
 		    		<a href="{{ item.URL }}" title="{{ item.resource }}">{{ item.name }}</a>
 		    	</td>
@@ -139,6 +141,5 @@ table{
 		<br>
 		<br>
 		<br>
-		<div class="footer"><p>Andrew J Freyer</p></div>
 	</body>
 </html>

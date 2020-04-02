@@ -19,7 +19,7 @@ JSON is used to store configuration information. Edit docker-compose with a bind
 {
 	"identifier_for_an_appliance" : {
 		"instructions" : "Lorem ipsum",
-		"troubleshooting" : "Lorem ipsum",
+		"troubleshooting" : "Thismachine is a bit finicky, try this...",
 		"notes" : "lorem ipsum",
 		"name" : "appliance name",
 		"model" : "abc123",

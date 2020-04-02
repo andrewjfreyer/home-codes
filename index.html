@@ -98,22 +98,30 @@ table{
 		{% if (data.name is not none) and (data.name | length > 0) %}
 		<h2>Information</h2>
 		<table>
+			{% if (data.name is not none) and (data.name | length > 0) %}
 			<tr>
 				<th>Name</th>
 				<td>{{data.name}}</td>
 			</tr>
+			{%endif%}
+			{% if (data.manufacturer is not none) and (data.manufacturer | length > 0) %}
 			<tr>
 				<th>Manufacturer</th>
 				<td>{{data.manufacturer}}</td>
 			</tr>
+			{%endif%}
+			{% if (data.model is not none) and (data.model | length > 0) %}
 			<tr>
 				<th>Model Number</th>
 				<td>{{data.model}}</td>
 			</tr>
+			{%endif%}
+			{% if (data.serial is not none) and (data.serial | length > 0) %}
 			<tr>
 				<th>Serial Number</th>
 				<td>{{data.serial}}</td>
 			</tr>
+			{%endif%}
 		</table>
 		{% endif %}
 

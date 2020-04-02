@@ -24,15 +24,15 @@ JSON is used to store configuration information. Edit docker-compose with a bind
 		"model" : "abc123",
 		"serial" : "123456789876543",
 		"manufacturer" : "Jura",
-		"documents" : [
+		"links" : [
 			{
 				"name" : "Manual",
-				"filename" : "xyz.pdf",
+				"URL" : "xyz.pdf",
 				"resource" : "PDF"
 			},
 			{
 				"name" : "Warranty",
-				"filename" : "xyz.pdf",
+				"URL" : "xyz.pdf",
 				"resource" : "PDF"
 			}
 		],

@@ -87,6 +87,7 @@ table{
 			</tr>
 			{% endif %}
 		</table>
+		{% endif %}
 
 		{% if (data.name is not none) and (data.name | length > 0) %}
 		<h2>Information</h2>
@@ -108,7 +109,6 @@ table{
 				<td>{{data.serial}}</td>
 			</tr>
 		</table>
-		{% endif %}
 		{% endif %}
 
 		{% if (data.consumables is not none) and (data.consumables | length > 0) %}

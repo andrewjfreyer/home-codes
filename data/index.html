@@ -70,15 +70,17 @@ table{
 	<body class="monospace">
 		<h1>{{data.name}}</h1>
 		<br>
+		{% if (data.instructions is not none) and (data.instructions | length > 0) and (data.notes is not none) and (data.instructions | length > 0) %}
+
 		<h2>Use Instructions</h2>
 		<table>
-			{% if (data.instructions is not none) and (data.instructions | length > 1) %}
+			{% if (data.instructions is not none) and (data.instructions | length > 0) %}
 			<tr>
 				<th>Instructions</th>
 				<td>{{data.instructions}}</td>
 			</tr>
 			{% endif %}
-			{% if (data.notes is not none) and (data.instructions | length > 1) %}
+			{% if (data.notes is not none) and (data.instructions | length > 0) %}
 			<tr>
 				<th>Notes</th>
 				<td>{{data.notes}}</td>
@@ -86,7 +88,7 @@ table{
 			{% endif %}
 		</table>
 
-		{% if (data.name is not none) and (data.name | length > 1) %}
+		{% if (data.name is not none) and (data.name | length > 0) %}
 		<h2>Information</h2>
 		<table>
 			<tr>
@@ -107,8 +109,9 @@ table{
 			</tr>
 		</table>
 		{% endif %}
+		{% endif %}
 
-		{% if (data.consumables is not none) and (data.consumables | length > 1) %}
+		{% if (data.consumables is not none) and (data.consumables | length > 0) %}
 		<h2>Consumable(s)</h2>
 
 		<table>
@@ -125,7 +128,7 @@ table{
 		</table>
 		{%endif%}
 
-		{% if (data.links is not none) and (data.links | length > 1) %}
+		{% if (data.links is not none) and (data.links | length > 0) %}
 		<h2>Links(s)</h2>
 
 		<table>

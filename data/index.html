@@ -121,14 +121,14 @@ table{
 		<h2>Documents(s)</h2>
 
 		<table>
-		{% for item in data.documents %}
 		    <tr>
-		    	<th>{{ item.name }}</th>
+				{% for item in data.documents %}
 		    	<td>
 		    		<a href="{{ item.URL }}" title="{{ item.resource }}">{{ item.name }}</a>
 		    	</td>
+				{% endfor %}
 		    </tr>
-		{% endfor %}
+		
 		</table>
 		<br>
 		<br>

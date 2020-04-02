@@ -1,6 +1,6 @@
 import os, json
 from enum import IntEnum
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 
 #========== FLASK 
 app = Flask(
@@ -13,6 +13,14 @@ class ConfigurationType(IntEnum):
     APPLIANCE = 1
 
 #========== DEFINE SIMPLE PRIMARY ROUTE
+@app.route("/p", methods=['GET'])
+def file_name():
+    #--- GET VALUES 
+    file_name = str(request.args.get('filename'))
+
+    return send_file("test.pdf")
+
+#========== DEFINE SIMPLE PRIMARY ROUTE
 @app.route("/q", methods=['GET'])
 def query():
     """ This function serves a webpage with appliance config information"""
@@ -23,6 +31,7 @@ def query():
         with open('../app/data/config.json') as json_file:
             config = json.load(json_file)
             print ("Loaded: " + str(len(config)) + " appliance configuration(s) from config.json.") 
+    
     except:
         print ("Error: Cannot load config.json.")
 

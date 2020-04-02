@@ -9,7 +9,7 @@ version='0.1'
 #========== FLASK 
 app = Flask(
     __name__, 
-    template_folder='/app/data', 
+    template_folder='/', 
 )
 
 #========== DEFINE CLASS OF TYPES 
@@ -25,7 +25,7 @@ def query():
     config = {}
     
     try: 
-        with open('../app/config.json') as json_file:
+        with open('../config.json') as json_file:
             config = json.load(json_file)
             print ("Loaded: " + str(len(config)) + " appliance configuration(s) from config.json.") 
     except:

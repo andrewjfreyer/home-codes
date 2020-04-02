@@ -4,9 +4,9 @@ services:
     container_name: home_codes
     build: .
     volumes: 
-      - type: bind 
-        source: ./data
-        target: /app/app/data
+      - type: volume 
+        source: ./config.json
+        target: /config.json
 
     ports:
       - "1987:8080"

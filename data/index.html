@@ -86,6 +86,12 @@ table{
 				<td>{{data.notes}}</td>
 			</tr>
 			{% endif %}
+			{% if (data.troubleshooting is not none) and (data.troubleshooting | length > 0) %}
+			<tr>
+				<th>Troubleshooting</th>
+				<td>{{data.troubleshooting}}</td>
+			</tr>
+			{%endif%}
 		</table>
 		{% endif %}
 

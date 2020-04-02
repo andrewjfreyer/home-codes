@@ -1,4 +1,4 @@
-### QR Code or NFC Tag as Trigger to Launch Self-Hosted Page with Home Appliance / Part Information
+# QR Code or NFC Tag as Trigger to Launch Self-Hosted Page with Home Appliance / Part Information
 
 URL Format:
 ```
@@ -19,6 +19,7 @@ JSON is used to store configuration information. Edit docker-compose with a bind
 {
 	"identifier_for_an_appliance" : {
 		"instructions" : "Lorem ipsum",
+		"troubleshooting" : "Lorem ipsum",
 		"notes" : "lorem ipsum",
 		"name" : "appliance name",
 		"model" : "abc123",
@@ -47,3 +48,5 @@ JSON is used to store configuration information. Edit docker-compose with a bind
 	}
 }
 ```
+
+Config file should be added to `/data` directory if using an unmodified `docker-compose` file. 

@@ -137,4 +137,4 @@ Encode the URL in a QR code (having an example IP address of `192.168.1.2`): ![e
 
 Now, whenever this QR code is scanned, a browser is launched with this information: 
 
-![IMG_0702](https://user-images.githubusercontent.com/6710151/78457901-db88ad80-766a-11ea-9279-a77f1ab41097.PNG)
+![IMG_0702](https://user-images.githubusercontent.com/6710151/78458005-9e70eb00-766b-11ea-8a94-da76d01b3aa8.PNG)

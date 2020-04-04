@@ -2,7 +2,7 @@
 
 ## **TL;DR**
 
-This is a quick containerized Flask project that consumes a JSON configuration file and serves, in response to a simple GET request, a Jinja template with that information. Intended use case is to encode a URL in a QR code printed on a label attached to a home appliance. 
+This is a quick containerized Flask project that consumes a JSON configuration file and serves, in response to a simple GET request, a Jinja template populated with information from that configuration file. Intended use case is to encode a URL in a QR code printed on a label attached to a home appliance. 
 
 ## **How to Install**
 

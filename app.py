@@ -25,9 +25,9 @@ def query():
     config = {}
     
     #try: 
-        with open('../config.json') as json_file:
-            config = json.load(json_file)
-            print ("Loaded: " + str(len(config)) + " appliance configuration(s) from config.json.") 
+    with open('../config.json') as json_file:
+        config = json.load(json_file)
+        print ("Loaded: " + str(len(config)) + " appliance configuration(s) from config.json.") 
     #except:
     #    return ('Error: Configuration file not found.')
 

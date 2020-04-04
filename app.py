@@ -24,12 +24,12 @@ def query():
     #--- LOAD CONFIG 
     config = {}
     
-    try: 
+    #try: 
         with open('../config.json') as json_file:
             config = json.load(json_file)
             print ("Loaded: " + str(len(config)) + " appliance configuration(s) from config.json.") 
-    except:
-        return ('Error: Configuration file not found.')
+    #except:
+    #    return ('Error: Configuration file not found.')
 
     #--- GET VALUES 
     config_type = str(request.args.get('t'))

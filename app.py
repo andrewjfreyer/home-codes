@@ -3,7 +3,7 @@ from enum import IntEnum
 from flask import Flask, render_template, request
 
 #========== VERSION 
-version='0.1.2'
+version='0.1.3'
 
 
 #========== FLASK 

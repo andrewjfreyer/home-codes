@@ -45,7 +45,7 @@ JSON is used to store configuration information. Edit docker-compose with a bind
 		"name" : "appliance name",
 		"model" : "abc123",
 		"serial" : "123456789876543",
-		"manufacturer" : "Jura",
+		"manufacturer" : "Appliance",
 		"links" : [
 			{
 				"name" : "Manual",
@@ -69,3 +69,72 @@ JSON is used to store configuration information. Edit docker-compose with a bind
 	}
 }
 ```
+
+## **Example for Jura Eno Micro 90**
+
+### `config.json`
+
+```
+{
+	"jura" : {
+		"instructions" : "To use, power on. Clear any errors (fill water tank, empty tray, or empty grounds) displayed when the display has a red back light. For a milk drink, fill milk reservoir to labeled volume and connect hose to nozzle extending from the left of the brew group head. On the left side of the rotary, from top to bottom: (1) latte, (2) cappuccino, (3) macchiato. On the right side, from top to bottom: (1) hot water, (2) espresso, (3) coffee.",
+		"notes" : "To control strength or liquid volume, you can rotate the dial.",
+		"name" : "Jura Espresso Machine",
+		"model" : "Eno Micro 90",
+		"manufacturer" : "Jura",
+		"links" : [
+			{
+				"name" : "Manual",
+				"URL" : "https://www.williams-sonoma.com/netstorage/pdf/Jura-ENA-Micro-90-Manual-99001.pdf",
+				"resource" : "PDF"
+			},
+			{
+				"name" : "Parts",
+				"URL" : "https://www.jura-parts.com/Jura-ENA-Micro-90-Parts-s/298.htm",
+				"resource" : "PDF"
+			}
+		],
+		"consumables" : [
+
+			{
+				"name" : "Little Owl Coffee",
+				"URL" : "https://www.littleowlcoffee.com",
+				"resource" : "Little Owl",
+				"description" : "Denver-based Coffee Company."
+			},
+			{
+				"name" : "Cleaning Agent",
+				"URL" : "https://www.amazon.com/Jura-Cappuccino-Automatic-Machines-Frothing/dp/B000OF8ZJO/ref=sxin_0_ac_d_pm?ac_md=2-0-VW5kZXIgJDQw-ac_d_pm&cv_ct_cx=jura+cleaning+solution&keywords=jura+cleaning+solution&pd_rd_i=B000OF8ZJO&pd_rd_r=1c298e23-25da-488e-a0fb-d096a97bf98c&pd_rd_w=guHCi&pd_rd_wg=XJFmE&pf_rd_p=516e6e17-ed95-417b-b7a4-ad2c7b9cbae3&pf_rd_r=AEER6D4VW6K6JJMGBHBM&psc=1&qid=1585763915&s=home-garden&sr=1-1-22d05c05-1231-4126-b7c4-3e7a9c0027d0",
+				"resource" : "Amazon",
+				"description" : "Milk system cleaning agent. Should be used before powering down the machine after making one or more milk drinks. Fill front milk reservoir with water to 'clean' line and add 1oz of cleaning agent. Press rotary when powering down to confirm M-CLEAN and to confirm that the agent is added. Follow the remaining instructions."
+			},
+			{
+                "name" : "Cleaning Tablets",
+                "URL" : "https://www.amazon.com/Jura-64308-Cleaning-Tablets-Automatic/dp/B000BJSF6Q",
+                "resource" : "Amazon",
+				"description" : "Used when deep cleaning the machine. Tablet is added to the powder bypass doser when instructed."
+            },
+			{
+				"name" : "Filter",
+				"URL" : "https://www.amazon.com/Jura-Claris-Water-Filter-Pack/dp/B00E9V60FA/ref=sr_1_fkmr1_2?keywords=jura+evo+micro+90+filter&qid=1585763952&s=home-garden&sr=1-2-fkmr1",
+				"resource" : "Amazon",
+				"description" : "Water filter is in the rear of the machine, within the water reservoir."
+			}
+		]
+	}
+}
+```
+
+### **URL**
+
+```
+http://your-internal-ip:1987/q?t=1&id=jura
+```
+
+Encode the URL in a QR code (having an example IP address of `192.168.1.2`): ![example_qr](https://user-images.githubusercontent.com/6710151/78457895-d3c90900-766a-11ea-9d02-90dfcf37fe04.png)
+
+### ** Results **
+
+Now, whenever this QR code is scanned, a browser is launched with this information: 
+
+![IMG_0702](https://user-images.githubusercontent.com/6710151/78457901-db88ad80-766a-11ea-9279-a77f1ab41097.PNG)

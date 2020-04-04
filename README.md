@@ -131,7 +131,9 @@ JSON is used to store configuration information. Edit docker-compose with a bind
 http://your-internal-ip:1987/q?t=1&id=jura
 ```
 
-Encode the URL in a QR code (having an example IP address of `192.168.1.2`): ![example_qr](https://user-images.githubusercontent.com/6710151/78457895-d3c90900-766a-11ea-9d02-90dfcf37fe04.png)
+Encode the URL in a QR code (having an example IP address of `192.168.1.2`): 
+
+![example_qr](https://user-images.githubusercontent.com/6710151/78457895-d3c90900-766a-11ea-9d02-90dfcf37fe04.png)
 
 ### ** Results **
 

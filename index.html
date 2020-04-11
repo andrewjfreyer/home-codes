@@ -135,7 +135,7 @@ table{
 		    		<a href="{{ item.URL }}" title="{{ item.resource }}">{{ item.name }}</a>
 		    	</th>
 		    	<td>
-		    		{{ item.description }}
+		    		{{ item.description | safe }}
 		    	</td>
 		    </tr>
 		{% endfor %}

@@ -77,19 +77,19 @@ table{
 			{% if (data.instructions is not none) and (data.instructions | length > 0) %}
 			<tr>
 				<th>Instructions</th>
-				<td>{{data.instructions}}</td>
+				<td>{{data.instructions | safe}}</td>
 			</tr>
 			{% endif %}
 			{% if (data.notes is not none) and (data.instructions | length > 0) %}
 			<tr>
 				<th>Notes</th>
-				<td>{{data.notes}}</td>
+				<td>{{data.notes| safe}}</td>
 			</tr>
 			{% endif %}
 			{% if (data.troubleshooting is not none) and (data.troubleshooting | length > 0) %}
 			<tr>
 				<th>Troubleshooting</th>
-				<td>{{data.troubleshooting}}</td>
+				<td>{{data.troubleshooting| safe}}</td>
 			</tr>
 			{%endif%}
 		</table>
@@ -135,7 +135,7 @@ table{
 		    		<a href="{{ item.URL }}" title="{{ item.resource }}">{{ item.name }}</a>
 		    	</th>
 		    	<td>
-		    		{{ item.description | safe }}
+		    		{{ item.description}}
 		    	</td>
 		    </tr>
 		{% endfor %}

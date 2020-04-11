@@ -80,7 +80,7 @@ table{
 				<td>{{data.instructions | safe}}</td>
 			</tr>
 			{% endif %}
-			{% if (data.notes is not none) and (data.instructions | length > 0) %}
+			{% if (data.notes is not none) and (data.notes | length > 0) %}
 			<tr>
 				<th>Notes</th>
 				<td>{{data.notes| safe}}</td>
